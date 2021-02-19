@@ -8,7 +8,23 @@ letter stay in the same place, and all letters reverse their positions:
 
 def reverseOnlyLetters(S):
     """Return reversed letters only"""
-    pass
+    #Use as stack, to take last letter 
+    letters = []
+    
+    #Store letters to list
+    for letter in S:
+        if letter.isalpha():
+            letters.append(letter)
+            
+    result = []
+    for char in S:
+        if char.isalpha():
+            result.append(letters.pop())
+        else:
+            result.append(char)
+    
+    return "".join(result)
+    
 
 
 
