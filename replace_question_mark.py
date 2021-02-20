@@ -12,7 +12,27 @@ with the given constraints:
 
 def replace_question_mark(s):
     """Return string with replaced question marks"""
-    pass
+    
+    chars = 'abcdefghijklmnopqrstuvwxyz'
+    result = list(s)
+
+    for i in range(len(s)):
+        #Do nothing if char not equal ?
+        if result[i] != '?':
+            continue
+            
+        pre, post = '', ''
+        if i - 1 >= 0:
+            pre = result[i - 1]
+        if i + 1 < len(s):
+            post = result[i + 1]
+
+        for char in chars:
+            if char != pre and char != post:
+                result[i] = char
+                break
+
+    return ''.join(result)
 
 print(replace_question_mark('?zs'))
 """There are 25 solutions for this problem. From "azs" to "yzs", all are valid. Only "z" 
