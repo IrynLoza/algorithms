@@ -13,7 +13,15 @@ The order of elements can be changed. It doesn't matter what you leave beyond th
 """
 
 def remove_element(nums, val):
-    pass
+    """Return array with removed elements"""
+
+    i = 0
+    while i < len(nums):
+        if nums[i] == val:
+            nums.pop(i)
+        else:
+            i+= 1
+    return len(nums)
 
 
 
