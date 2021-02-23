@@ -3,16 +3,23 @@ magazines, write a function that will return true if the ransom note can be cons
 the magazines ; otherwise, it will return false.
 
 Each letter in the magazine string can only be used once in your ransom note:
->>> ransom_note('a','b')
+>>> is_ransom_note('a','b')
 False
->>> ransom_note('aa','ab')
+>>> is_ransom_note('aa','ab')
 False
->>> ransom_note('aa','aab')
+>>> is_ransom_note('aa','aab')
 True
 """
 
-def ransom_note(ransomNote, magazine):
-    pass
+def is_ransom_note(ransomNote, magazine):
+    """Return True if can collect ransomNote from magazine"""
+
+    for char in ransomNote:
+        if char not in magazine:
+            return False
+        else:
+            magazine = magazine.replace(char, '', 1)
+    return True
 
 
 
