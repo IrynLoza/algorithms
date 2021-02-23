@@ -15,7 +15,15 @@ False
 """
 
 def is_capital(word):
-    pass
+    """Return True if capitals in word is right
+
+    Check if all word upper case -> word.isupper()
+    or lower case -> word.islower() and return True
+    Check if only first char upper case-->  (word[0].isupper() and word[1:].islower()) 
+    and return True
+    Overwise return False"""
+
+    return word.isupper() or word.islower() or (word[0].isupper() and word[1:].islower())
 
 
 
