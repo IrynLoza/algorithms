@@ -8,7 +8,33 @@
 """
 
 def sum_concatenation(a, b):
-    pass
+    """Return concatenated string"""
+
+    result = ''
+    main = []
+    second = []
+
+    if len(a) >= len(b):
+        main = a
+        second = b
+    else:
+        main = b
+        second = a
+
+    second_length = len(second)
+
+    i = 0
+    while second_length > 0:
+        temp = int(main[len(main)-(1+i)]) + int(second[len(second)-(1+i)])
+        result = f'{temp}{result}'
+        second_length-= 1 
+        i+= 1
+
+    rest_nums = main[:(len(main)-len(second))]  
+    result = f'{rest_nums}{result}'   
+
+    return result
+
 
 
 
