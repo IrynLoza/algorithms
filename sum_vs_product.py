@@ -10,7 +10,15 @@ array elements:
 """
 
 def sum_vs_product(arr):
-    pass
+    """Return number which represents difference between product and sum"""
+    sum_num = arr[0]
+    product_num = arr[0]
+
+    for num in arr[1:]:
+        sum_num+= num
+        product_num*= num
+
+    return product_num - sum_num    
 
 
 
