@@ -16,7 +16,22 @@ Return the letter that was added to t:
 
 def find_difference(s, t):
     """Return difference between two strings"""
-    pass
+    hash_map = {}
+        
+    for char in t:
+        if char not in hash_map:
+            hash_map[char] = 1
+        else:
+            hash_map[char]+= 1
+            
+    for char in s:
+        if char in hash_map:
+            hash_map[char]-= 1
+            
+    
+    for key in hash_map:
+        if hash_map[key] == 1:
+            return key
 
 
 
