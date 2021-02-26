@@ -19,7 +19,24 @@ of different types of candies she can eat if she only eats n / 2 of them:
 """
 
 def distribute_candies(candyType):
-    pass
+    """Return how many candy's type Alice can eat"""
+
+    types = 1
+    n = 2
+    formula = len(candyType)//n
+    
+    candyType = sorted(candyType)
+    
+    i = 0
+    while i < len(candyType)-1:
+        if candyType[i] != candyType[i+1]:
+            types+= 1
+        i+= 1
+        
+    if types <= formula:
+        return types
+    else:
+        return formula
 
 
 
