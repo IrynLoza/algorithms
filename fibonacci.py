@@ -15,7 +15,10 @@ Given n, calculate F(n).
 
 def fib(n):
     """Return fibonacci of n"""
-    pass
+    
+    if n <= 1:
+        return n
+    return fib(n-1) + fib(n-2)   
 
 
 
