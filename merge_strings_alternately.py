@@ -13,7 +13,25 @@ Return the merged string:
 
 def merge_alternately(word1, word2):
     """Return the merged string"""
-    pass
+    length = 0
+    main = ''
+    
+    if len(word1) >= len(word2):
+        length = len(word2)
+        main = word1
+    else:
+        length = len(word1)
+        main = word2
+        
+    result = ''    
+    for i in range(length):
+        result = f'{result}{word1[i]}{word2[i]}'
+    
+    if len(main) > length:
+        rest = main[length:]
+        result = f'{result}{rest}'
+        
+    return result
 
 
 
