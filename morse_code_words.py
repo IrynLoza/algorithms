@@ -22,7 +22,44 @@ Return the number of different transformations among all words we have:
 
 def unique_words(words):
     """Return the number of unique morse words"""
-    pass
+    morse = {
+            'a': ".-",
+            'b': "-...",
+            'c': "-.-.",
+            'd': "-..",
+            'e': ".",
+            'f': "..-.",
+            'g': "--.",
+            'h': "....",
+            'i': "..",
+            'j': ".---",
+            'k': "-.-",
+            'l': ".-..",
+            'm': "--",
+            'n': "-.",
+            'o': "---",
+            'p': ".--.",
+            'q': "--.-",
+            'r': ".-.",
+            's': "...",
+            't': "-",
+            'u': "..-",
+            'v': "...-",
+            'w': ".--",
+            'x': "-..-",
+            'y': "-.--",
+            'z': "--..",
+        }
+        
+    result = {}
+    
+    for i in range(len(words)):
+        word = ''
+        for y in range(len(words[i])):
+            word = f'{word}{morse[words[i][y]]}'
+        result[word] = 1   
+        
+    return len(result)
 
 
 
