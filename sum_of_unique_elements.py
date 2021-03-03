@@ -14,7 +14,20 @@ Return the sum of all the unique elements of nums:
 
 def unique_sum(nums):
     """Return the sum of all the unique elements of nums"""
-    pass
+    result = 0
+    hash_map = {}
+    
+    for num in nums:
+        if num not in hash_map:
+            hash_map[num] = 1
+        else:
+            hash_map[num]+= 1 
+    
+    for num in hash_map:
+        if hash_map[num] == 1:
+            result+= num
+    
+    return result
 
 
 
