@@ -13,7 +13,16 @@ Return the number of consistent strings in the array words:
 
 def count_consistent_strings(allowed, words):
     """Return the number of consistent strings in the array words"""
-    pass
+    count = 0
+    for i in range(len(words)):
+        for y in range(len(words[i])):
+            if  words[i][y] in allowed:
+                if y == len(words[i])-1:
+                    count+= 1
+            else:
+                break
+                  
+    return count
 
 
 
