@@ -7,6 +7,8 @@ specifically, if x occurs before y in S, then x should occur before y
 in the returned string:
 >>> custom_sort("cba", "abcd")
 'cbad'
+>>> custom_sort("kqep", "pekeq")
+'kqeep'
 """
 
 def custom_sort(S, T):
