@@ -20,7 +20,15 @@ At the end the concatenation [2] + [4,4,4] is [2,4,4,4].
 
 def decompressed_list(nums):
     """Return the decompressed list"""
-    pass
+    result = []
+    i = 0 
+    while i < len(nums):
+        n = nums[i]
+        while n != 0:
+            result.append(nums[i+1])
+            n-= 1
+        i+= 2
+    return result 
 
 
 
