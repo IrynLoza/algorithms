@@ -9,16 +9,20 @@ Return the target array.
 
 It is guaranteed that the insertion operations will be valid:
 >>> target_array([0,1,2,3,4], [0,1,2,2,1])
-[0,4,1,3,2]
+[0, 4, 1, 3, 2]
 >>> target_array([1,2,3,4,0], [0,1,2,3,0])
-[0,1,2,3,4]
+[0, 1, 2, 3, 4]
 >>> target_array([1], [0])
 [1]
 """
 
 def target_array(nums, index):
     """Return the target array"""
-    pass
+    result = []
+    for i in range(len(index)):
+        result.insert(index[i], nums[i])
+    
+    return result
 
 
 
