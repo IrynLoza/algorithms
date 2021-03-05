@@ -11,7 +11,15 @@ in the returned string:
 
 def custom_sort(S, T):
     """Return any permutation of T (as a string) that satisfies this property"""
-    pass
+    T_list = list(T)
+    index = 0
+    for char in S:
+        for i in range(index, len(T_list)):
+            if T_list[i] == char:
+                T_list[i], T_list[index] = T_list[index], T_list[i]
+                index += 1   
+
+    return ''.join(T_list)
 
 
 
