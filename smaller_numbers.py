@@ -11,7 +11,15 @@ to count the number of valid j's such that j != i and nums[j] < nums[i]:
 
 def smaller_numbers(nums):
     """Return the answer in an array"""
-    pass
+    result = []
+    for i in range(len(nums)):
+        count = 0
+        for y in range(len(nums)):
+            if nums[y] < nums[i]:
+                count+= 1
+        result.append(count)
+        
+    return result
 
 
 
