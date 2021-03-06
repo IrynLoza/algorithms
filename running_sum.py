@@ -4,16 +4,21 @@ Input: nums = [1,2,3,4]
 Output: [1,3,6,10]
 Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4]:
 >>> running_sum([1,2,3,4])
-[1,3,6,10]
+[1, 3, 6, 10]
 >>> running_sum([1,1,1,1,1])
-[1,2,3,4,5]
+[1, 2, 3, 4, 5]
 >>> running_sum([3,1,2,10,1])
-[3,4,6,16,17]
+[3, 4, 6, 16, 17]
 """
 
 def running_sum(nums):
     """Return the running sum of nums"""
-    pass
+    current_sum = 0
+    result = []
+    for num in nums:
+        current_sum+= num 
+        result.append(current_sum)
+    return result 
 
 
 
