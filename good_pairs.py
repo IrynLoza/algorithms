@@ -11,7 +11,19 @@ A pair (i,j) is called good if nums[i] == nums[j] and i < j.
 
 def good_pair(nums):
     """Return the number of good pairs"""
-    pass
+    result = 0
+    hash_map = {}
+    
+    for num in nums:
+        if num not in hash_map:
+            hash_map[num] = 1
+        else:
+            hash_map[num]+= 1       
+        
+    for key in hash_map:
+        result+= (hash_map[key]*(hash_map[key]-1))/2
+    
+    return int(result)
 
 
 
