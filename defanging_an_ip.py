@@ -9,7 +9,16 @@ A defanged IP address replaces every period "." with "[.]":
 
 def defanging_ip(address):
     """Return defanged IP address"""
-    pass
+    result = ""
+        
+    for char in address:
+        if char != '.':
+            result = f"{result}{char}"
+        else:
+            result = f"{result}["
+            result = f"{result}{char}"
+            result = f"{result}]"
+    return result 
 
 
 
