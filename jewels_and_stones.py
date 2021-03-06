@@ -13,7 +13,11 @@ Letters are case sensitive, so "a" is considered a different type of stone from
 
 def jewels_in_stones(jewels, stones):
     """Return num of jewels in stones"""
-    pass
+    result = 0
+    for i in range(len(stones)):
+        if stones[i] in jewels:
+            result+= 1
+    return result
 
 
 
