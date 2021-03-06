@@ -12,7 +12,16 @@ The richest customer is the customer that has the maximum wealth.
 
 def richest_customer(accounts):
     """Return wealth of richest customer"""
-    pass
+    max_wealth = 0
+        
+    for i in range(len(accounts)):
+        wealth = 0
+        for y in range(len(accounts[i])):
+            wealth+= accounts[i][y]
+        if wealth > max_wealth:
+            max_wealth = wealth
+        
+    return max_wealth 
 
 
 
