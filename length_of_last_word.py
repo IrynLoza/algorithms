@@ -12,7 +12,10 @@ A word is a maximal substring consisting of non-space characters only
 
 def length_last_word(s):
     """Return length of last word"""
-    pass
+    #handle "     " = []
+    s = s.strip().split()
+    #s = ['Hello', 'World']
+    return len(s[-1]) if s else 0
 
 
 
