@@ -10,9 +10,19 @@ Do the above modifications to the input array in place:
 [1, 2, 3]
 """
 
-def duplicate_zeros(nums):
+def duplicate_zeros(arr):
     """Return array with duplicate zeros"""
-    pass
+    length = len(arr)
+    i = 0
+    while i < length:
+        if arr[i] == 0:
+            arr.insert(i, 0)
+            i+= 2
+            arr.pop()
+        else:
+            i+= 1
+
+    return arr        
 
 
 
@@ -20,4 +30,5 @@ def duplicate_zeros(nums):
 if __name__ == '__main__':
     import doctest
     if doctest.testmod().failed == 0:
-        print('\n \u2764\uFE0F \u2764\uFE0F \u2764\uFE0F ALL TESTS PASS! Love with you!')
+        print('\n \u2764\uFE0F \u2764\uFE0F \u2764\uFE0F ALL TESTS PASS! \
+               Love with you! \u2764\uFE0F \u2764\uFE0F \u2764\uFE0F')
