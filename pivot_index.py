@@ -17,7 +17,17 @@ array:
 
 def pivot_index(nums):
     """Return the leftmost pivot index. If no such index exists, return -1"""
-    pass
+    left_sum = 0
+    #sum() for sum all elements in array
+    right_sum = sum(nums)
+    for i in range(len(nums)):
+        #add num to left
+        left_sum += nums[i]
+        #return i then equal or take away num from right sum
+        if left_sum == right_sum:
+            return i
+        right_sum -= nums[i]
+    return -1
 
 
 
