@@ -11,7 +11,8 @@ A segment is defined to be a contiguous sequence of non-space characters:
 
 def count_segments(s):
     """Return number of segments"""
-    pass
+    s = s.strip().split()
+    return len(s)
 
 
 
