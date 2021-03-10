@@ -18,7 +18,12 @@ Therefore only 12 and 7896 contain an even number of digits:
 
 def find_even(nums):
     """Return how many of them contain an even number of digits"""
-    pass
+    result = 0
+        
+    for num in nums:
+        if len(str(num)) % 2 == 0:
+            result+= 1
+    return result
 
 
 
