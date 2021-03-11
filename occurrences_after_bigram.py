@@ -4,16 +4,26 @@ third comes immediately after second.
 
 For each such occurrence, add "third" to the answer, and return the answer:
 >>> find_ocurrences("alice is a good girl she is a good student", "a", "good")
-["girl", "student"]
+['girl', 'student']
 >>> find_ocurrences("we will we will rock you", "we", "will")
-["we","rock"]
+['we', 'rock']
 >>> find_ocurrences("i love dogs because i love", "i", "love")
-["dogs"]
+['dogs']
 """
 
 def find_ocurrences(text, first, second):
     """Return third occurrence"""
-    pass
+    text = text.split(' ')
+    result = []
+    
+    i = 0
+    
+    while i < len(text):
+        if i+2 < len(text):
+            if text[i] == first and text[i+1] == second:
+                result.append(text[i+2])
+        i+= 1    
+    return result  
 
 
 
