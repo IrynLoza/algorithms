@@ -12,7 +12,15 @@ You can use each character in text at most once:
 
 def balloon_numbers(text):
     """Return the maximum number of instances that can be formed"""
-    pass
+    hash_map = { 'b': 0, 'a': 0, 'l': 0, 'o': 0, 'n': 0}
+
+    for char in text:
+        if char in hash_map:
+            hash_map[char]+= 1
+    hash_map['l']//2
+    hash_map['o']//2  
+
+    return min(hash_map.values())     
 
 
 
