@@ -12,6 +12,15 @@
 
 def binary_to_decimal(str):
     """Return decimal number"""
+    base = 1
+    decimal_value = 0
+
+    for i in range(len(str) -1, -1, -1):
+        if str[i] == '1':
+            decimal_value+= base
+        base = base*2  
+        
+    return decimal_value
     pass
 
 
