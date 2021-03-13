@@ -21,7 +21,6 @@ def binary_to_decimal(str):
         base = base*2  
         
     return decimal_value
-    pass
 
 
 
