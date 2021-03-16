@@ -11,8 +11,30 @@ negative numbers come before the positive numbers:
 """
 
 def abs_sort(arr):
-    """Return sorted array in absolute order"""
-    pass
+    """Return sorted array in absolute order
+    
+    Write a custom comparison function, such as smaller(a, b) which 
+    is true if and only if a is supposed to come before b (and a != b). 
+    From here, we can repeatedly find the ‘smallest’ number in A[i], 
+    A[i+1], ..., A[A.length - 1] and swapping it with A[i].
+    """
+
+    def smaller(a, b):
+        """Find smaller num in absolute"""
+        if abs(a) < abs(b):
+            return True
+        elif abs(a) > abs(b):
+            return False
+        return a < b
+    
+    for i in range(len(arr)):
+        best = i
+        for y in range(i, len(arr)):
+            if smaller(arr[y], arr[best]):
+                best = y
+        arr[best], arr[i] = arr[i], arr[best]   
+    return arr
+    
 
 
 
