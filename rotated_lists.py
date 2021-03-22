@@ -28,7 +28,38 @@ increasing order e.g. [1, 3, 5, 7]:
 
 def count_rotations(nums):
     """Return number of rotations"""
-    pass
+    #Brute force
+    """position = 0                
+    
+    while position < len(nums):                     
+        if position > 0 and nums[position] < nums[position-1]:   
+            return position
+        position += 1
+    
+    return 0"""
+
+    #Binary search
+    lo = 0
+    hi = len(nums)-1
+    
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        mid_number = nums[mid]
+        
+        
+        if mid > 0 and mid_number < nums[mid-1]:
+            # The middle position is the answer
+            return mid
+        
+        elif mid_number < nums[hi]:
+            # Answer lies in the left half
+            hi = mid - 1  
+        
+        else:
+            # Answer lies in the right half
+            lo = mid + 1
+    
+    return 0
 
 
 
