@@ -8,17 +8,30 @@ ruleKey == "type" and ruleValue == typei.
 ruleKey == "color" and ruleValue == colori.
 ruleKey == "name" and ruleValue == namei
 >>> count_mathes([["phone","blue","pixel"],["computer","silver","lenovo"], \
-    ["phone","gold","iphone"]], "color", "silver")
+["phone","gold","iphone"]], "color", "silver")
 1
 >>> count_mathes([["phone","blue","pixel"],["computer","silver","phone"], \
 ["phone","gold","iphone"]], "type", "phone")
->>> 2
+2
 """
 
 
 def count_mathes(items, ruleKey, ruleValue):
     """Return the number of items that match the given rule"""
-    pass
+    key = {
+        'type': 0,
+        'color': 1, 
+        'name': 2
+    }
+    
+    index = key[ruleKey]
+        
+    result = 0        
+    for i in range(len(items)):
+        for y in range(len(items[i])):
+            if y == index and ruleValue == items[i][y]:
+                result+= 1
+    return result 
 
 
 
