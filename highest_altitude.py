@@ -13,7 +13,17 @@ the highest altitude of a point:
 
 def highest_altitude(gain):
     """Return highest altitude"""
-    pass
+    altitudes = [0]
+        
+    for num in gain:
+        next_num = num + altitudes[-1]
+        altitudes.append(next_num)
+    
+    result = altitudes[0]
+    for num in altitudes:
+        if num > result:
+            result = num
+    return result
 
 
 
