@@ -18,7 +18,26 @@ True
 
 def is_sorted(nums):
     """Return True if array sorted in rotated, overwise return False"""
-    pass
+    sorted_nums = sorted(nums)
+        
+    for i in range(len(nums)):
+        """
+        last el, 0, 1...: to the end AND from start to last el, 0, 1...
+        [-1:] + [:-1]
+        [2, 3, 4, 5, 1]
+        [0:] + [:0]
+        [3, 4, 5, 1, 2]
+        [1:] + [:1]
+        [4, 5, 1, 2, 3]
+        [2:] + [:2]
+        [5, 1, 2, 3, 4]
+        [3:] + [:3]
+        [1, 2, 3, 4, 5]
+        """
+        temp = nums[i-1:] + nums[:i-1]
+        if temp == sorted_nums:
+            return True
+    return False
 
 
 
