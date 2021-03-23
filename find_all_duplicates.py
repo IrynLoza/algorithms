@@ -10,7 +10,18 @@ Find all the elements that appear twice in this array:
 
 def duplicates(nums):
     """Return all duplicates appear twice"""
-    pass
+    hash_map = {}
+        
+    for num in nums:
+        if num not in hash_map:
+            hash_map[num] = 1
+        else:
+            hash_map[num]+= 1
+    result = []
+    for key in hash_map:
+        if hash_map[key] > 1 and hash_map[key] <=2:
+            result.append(key)
+    return result  
 
 
 
