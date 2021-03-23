@@ -7,15 +7,25 @@
 16
 >>> square_root(1)
 1
->>> square_root(2)
-1
 """
 
 def square_root(num):
     """Return square root of given number"""
-    pass
+    lo = 1
+    hi = num
 
+    while lo <= hi:
+        mid = (lo+hi) // 2
+        if num // mid == mid:
+            return mid
+        elif num // mid < mid:
+            #rigth side
+            hi = mid - 1
+        else:
+            #left side
+            lo = mid + 1
 
+            
 
 
 if __name__ == '__main__':
