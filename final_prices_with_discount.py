@@ -14,7 +14,21 @@ ith item of the shop considering the special discount:
 
 def final_prices(prices):
     """Return array with final prices"""
-    pass
+    result = []
+        
+    for i in range(len(prices)):
+        # Looping through the list starting at the current index + 1
+        for num in prices[i+1:]:
+            # If it is lower than the value of current index, subtract amount and
+            # add to totals. Then break so it doesnt continue through the list
+            if num <= prices[i]:
+                result.append(prices[i] - num)
+                break
+        # If no items are less than current value, append current value to totals
+        else:
+            result.append(prices[i])
+            
+    return result
 
 
 
