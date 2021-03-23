@@ -10,7 +10,18 @@ False
 
 def is_perfect(num):
     """Return True if square root is perfect or False if not"""
-    pass
+    lo = 1
+    hi = num
+    
+    while lo <= hi:
+        mid = (lo+hi) // 2
+        if num / mid == mid:
+            return True
+        elif num / mid < mid:
+            hi = mid -1
+        else:
+            lo = mid + 1
+    return False
 
 
 
