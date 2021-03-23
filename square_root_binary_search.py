@@ -19,10 +19,10 @@ def square_root(num):
         if num // mid == mid:
             return mid
         elif num // mid < mid:
-            #rigth side
+            #left side
             hi = mid - 1
         else:
-            #left side
+            #rigth side
             lo = mid + 1
 
             
