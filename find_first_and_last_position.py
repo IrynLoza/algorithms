@@ -12,7 +12,15 @@ If target is not found in the array, return [-1, -1]:
 
 def search_range(nums, target):
     """Return first and last position of given element or -1"""
-    pass
+    result = []
+    for i in range(len(nums)):
+        if nums[i] == target:
+            result.append(i)  
+    
+    if len(result) == 0:
+        return [-1, -1]
+    else:
+        return [result[0], result[-1]]
 
 
 
