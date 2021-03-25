@@ -7,9 +7,17 @@ element with -1:
 [-1]
 """
 
-def replaced(nums):
+def replaced(arr):
     """Return array with replaced numbers"""
-    pass
+    result = []
+        
+    for i in range(len(arr)):
+        max_num = arr[i:][0]
+        for num in arr[i:]:
+            if num > max_num:
+                max_num = num
+        result.append(max_num)  
+    return result[1:] + [-1]
 
 
 
