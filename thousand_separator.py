@@ -10,7 +10,16 @@ and return it in string format:
 
 def separator(n):
     """Return with separator"""
-    pass
+    #reverse n
+    n = str(n)[::-1]
+    
+    result = ''
+    for i in range(len(n)):
+        if i%3 == 0 and i>0:
+            result  = result + '.'+ n[i]
+        else:
+            result = result + n[i]
+    return ''.join(result)[::-1]
 
 
 
