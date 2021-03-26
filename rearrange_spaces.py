@@ -18,7 +18,19 @@ string should be the same length as text:
 
 def rearranging_spaces(text):
     """Return the string after rearranging the spaces"""
-    pass
+    words = text.split()        
+    space_count = text.count(' ')
+    
+    if len(words) > 1:
+        #divmod - return (x // y, x % y) 
+        between, at_end = divmod(space_count, len(words) - 1)
+    else:
+        between, at_end = 0, space_count
+    
+    spaces_between = " " * between
+    spaces_at_end = " " * at_end
+    
+    return spaces_between.join(words) + spaces_at_end
 
 
 
