@@ -18,7 +18,16 @@ to the input array will be known to the caller:
 
 def remove_duplicates(nums):
     """Remove third duplicate and return length of updated array"""
-    pass
+    if len(nums)<3:
+        return len(nums)
+    
+    i=2
+    while i<len(nums):
+        if nums[i]==nums[i-2]:
+            nums.pop(i)
+        else:
+            i+=1
+    return len(nums)
 
 
 
