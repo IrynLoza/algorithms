@@ -18,5 +18,18 @@ matrixElementsSum(matrix) = 9
 */ 
 
 function matrixElementsSum(matrix) {
-    return 
+    let roomSum = 0;
+    
+    for (let i = 0; i < matrix[0].length; i++) {
+        for (let row = 0; row < matrix.length; row++) {
+            console.log(matrix[row][i])
+            if (matrix[row][i] > 0) {
+                roomSum+= matrix[row][i];
+            } else {
+                break
+            }
+        }    
+    }
+    
+    return roomSum 
 }
