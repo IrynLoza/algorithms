@@ -13,3 +13,15 @@
  *     }
  * }
  */
+
+function inorderTraversal(root: TreeNode | null): number[] {
+    if (root === null) {
+        return []
+    }
+    
+    let left = inorderTraversal(root.left);
+    let key = [root.val];
+    let right = inorderTraversal(root.right);
+    
+    return left.concat(key, right)
+};
