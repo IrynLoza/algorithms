@@ -13,3 +13,15 @@
  *     }
  * }
  */
+
+function preorderTraversal(root: TreeNode | null): number[] {
+    if (root === null) {
+        return []
+    }
+    
+    let key = [root.val];
+    let left = preorderTraversal(root.left);
+    let right = preorderTraversal(root.right);
+    
+    return key.concat(left, right)
+};
