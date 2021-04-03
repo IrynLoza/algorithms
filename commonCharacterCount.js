@@ -10,5 +10,23 @@ Strings have 3 common characters - 2 "a"s and 1 "c".
 */
 
 function commonCharacterCount(s1, s2) {
+    let chars = {};
     
+    for (let i = 0; i < s1.length; i++) {
+        if ( !(s1[i] in chars)) {
+            chars[s1[i]] = 1;
+        } else {
+            chars[s1[i]]++;
+        }
+    }
+    
+    let result = 0;
+    for (let y = 0; y < s2.length; y++) {
+        if (s2[y] in chars && chars[s2[y]] > 0) {
+            chars[s2[y]]--;
+            result++;
+        }
+    }
+    
+    return result;
 }
