@@ -14,5 +14,19 @@ isLucky(n) = false.
 */
 
 function isLucky(n) {
+    let halfSum = 0;
+    let string = n.toString();
+    let length = Math.round(string.length / 2);
     
+    for (let i = 0; i < length; i++) {
+        halfSum+= +string[i];
+    }
+    
+    let secondSum = 0;
+    for (let i = length; i < string.length; i++) {
+        secondSum+= +string[i];
+    }
+    
+    
+    return halfSum === secondSum;
 }
