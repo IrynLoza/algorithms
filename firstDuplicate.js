@@ -21,34 +21,16 @@ index for its second occurrence. If there are no such elements, return -1.
 */
 
 function firstDuplicate(a) {
-    let hash_map = {};
-    let maxLength = 0;
-    
+    let hash_map = {}
+ 
     for (let i = 0; i < a.length; i++) {
         if (a[i] in hash_map) {
-            hash_map[a[i]].push(i);
-            if (hash_map[a[i]].length > maxLength) {
-                maxLength = hash_map[a[i]].length;
-            }
+            return a[i];
         } else {
             hash_map[a[i]] = [i];
         }
     }
-    
-    if (maxLength === 0) {
-        return -1;
-    } else {
-        let minLastIndex = a.length;
-
-        for (key in hash_map) {
-            if (hash_map[key].length === maxLength) {
-                if (hash_map[key][hash_map[key].length-1] < minLastIndex) {
-                    minLastIndex = hash_map[key][hash_map[key].length-1]
-                }
-            }
-        }
-        return a[minLastIndex];
-        }
+    return -1;
 }
 
 console.log(firstDuplicate([2, 1, 3, 5, 3, 2])) //3
