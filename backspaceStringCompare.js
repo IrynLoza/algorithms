@@ -27,7 +27,27 @@ Explanation: S becomes "c" while T becomes "b".
 */
 
 function backspaceCompare(S, T) {
-
+    let stackS = [];
+    let stackT = [];
+    
+  
+    for (let char of S) {
+        if (char !== '#') {
+            stackS.push(char);
+        } else {
+            stackS.pop();
+        }
+    }
+    
+    for (let char of T) {
+        if (char !== '#') {
+            stackT.push(char);
+        } else {
+            stackT.pop();
+        }
+    }
+    
+    return stackS.toString() === stackT.toString();
 }
 
 console.log(backspaceCompare("a#c","b")) // false
