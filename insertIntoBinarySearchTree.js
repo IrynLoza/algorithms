@@ -20,5 +20,15 @@ the tree remains a BST after insertion. You can return any of them.
 */
 
 function insertIntoBST(root, val) {
+    if (root === null) {
+        root = new TreeNode(val);
+    //insert to the left subtree    
+    } else if (val < root.val) {
+        root.left = insertIntoBST(root.left, val);
+    //insert to the right subtree
+    } else if (val > root.val) {
+        root.right = insertIntoBST(root.right, val);
+    }
 
+    return root
 }
