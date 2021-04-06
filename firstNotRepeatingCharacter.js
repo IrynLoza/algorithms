@@ -13,7 +13,29 @@ it appears in the string first.
 */
 
 function firstNotRepeatingCharacter(s) {
-
+    let hash_map = {};
+    
+    for (let char of s) {
+        if (char in hash_map) {
+            hash_map[char] = false;
+        } else {
+            hash_map[char] = true;
+        }
+    }
+    
+    if (Object.values(hash_map).includes(true)) {
+        let index = s.length;
+        for (let i = 0; i < s.length; i++) {
+            if (hash_map[s[i]] === true) {
+                if (i < index) {
+                    index = i;
+                }
+            } 
+        }
+        return s[index];
+    } else {
+        return '_';
+    }  
 }
 
 console.log(firstNotRepeatingCharacter("abacabad")) //'c'
