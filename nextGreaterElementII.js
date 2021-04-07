@@ -8,7 +8,24 @@ find its next greater number. If it doesn't exist, return -1 for this number.
 */
 
 function nextGreaterElements(nums) {
+    let stack = [];
+ 
+    for (let i = 0; i < nums.length; i++) {
+        stack.push(-1);
+        
+        let temp = nums.slice(i, nums.length).concat(nums.slice(0, i));
+        y = 0;
+        while (y < temp.length) {
+            if (temp[y] > nums[i]) {
+                stack.pop();
+                stack.push(temp[y]);
+                break;
+            } 
+            y++;
+        }   
+    };
     
+    return stack
 }
 
 console.log(nextGreaterElements([1,2,1])); //[2,-1,2]
