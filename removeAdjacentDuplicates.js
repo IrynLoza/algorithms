@@ -9,7 +9,17 @@ guaranteed the answer is unique.
 */
 
 function removeAdjacentDuplicates(S) {
-
+    let stack = [S[0]];
+    
+    for (let i = 1; i < S.length; i++) {
+        if (stack[stack.length-1] !== S[i]) {
+            stack.push(S[i]);
+        } else {
+            stack.pop();
+        }
+    }
+    
+    return stack.join('');
 };
 
 console.log(removeAdjacentDuplicates("abbaca")); // 'ca'
