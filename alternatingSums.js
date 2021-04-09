@@ -10,7 +10,18 @@ complete.
 */
 
 function alternatingSums(a) {
-
+    let firstTeam = 0;
+    let secondTeam = 0;
+    
+    for (let i = 0; i < a.length; i++) {
+        if (i%2 === 0) {
+            firstTeam+= a[i];
+        } else {
+            secondTeam+= a[i]
+        }
+    }
+    
+    return [firstTeam, secondTeam]
 }
 
 console.log(alternatingSums([50, 60, 60, 45, 70])) // [180, 105]
