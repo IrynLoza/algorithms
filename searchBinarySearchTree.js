@@ -19,5 +19,18 @@ subtree rooted with that node. If such a node does not exist, return null.
  */
 
 function searchBST(root, val) {
-    
+    if (root === null) {
+        return null
+    } 
+    if (val === root.val) {
+        return root;
+    }
+    //search in left subtree
+    if (val < root.val) {
+      return searchBST(root.left, val)
+      }
+    //search in right subtree    
+    if (val > root.val) {
+        return searchBST(root.right, val)
+    }
 }
