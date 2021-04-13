@@ -4,7 +4,15 @@ Given an array of integers, find the maximal absolute difference
 */
 
 function arrayMaximalAdjacentDifference(inputArray) {
-
+    let value = 0;
+    for (let i = 0; i < inputArray.length; i++) {
+        let diff = 0;
+        diff = Math.max((inputArray[i]-inputArray[i+1]), (inputArray[i+1]-inputArray[i]))
+        if (diff > value) {
+            value = diff;
+        }
+    }
+    return value;
 }
 
 console.log(arrayMaximalAdjacentDifference([2, 4, 1, 0])) //3
