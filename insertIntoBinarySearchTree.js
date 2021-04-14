@@ -18,7 +18,40 @@ the tree remains a BST after insertion. You can return any of them.
 * @return {TreeNode}
 
 */
+//while loop
+function insertIntoBST(root, val) {
+    let newNode = new TreeNode(val);
+    if (!root) {
+        root = newNode;
+        return root;
+    }
+    
+    let curNode = root;
+    while (curNode !== null) {
+        console.log('curNode', curNode)
+        if (val < curNode.val) {
+            if (curNode.left === null) {
+                curNode.left = newNode;
+                return root;
+            } else {
+                //Go deeper
+                curNode = curNode.left;
+                
+            }
+        }
+    
+        if (val > curNode.val) {
+            if (curNode.right === null) {
+                curNode.right = newNode;
+                return root;
+            } else {
+                curNode = curNode.right;
+            }
+        }
+    }
+}
 
+//recursion
 function insertIntoBST(root, val) {
     if (root === null) {
         root = new TreeNode(val);
