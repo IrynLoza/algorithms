@@ -21,5 +21,25 @@ differ in height by no more than 1.
  */
 
  function isBalanced(root) {
-     
+    if (!root) {
+        return true;
+    }
+    
+    if (Math.abs(height(root.left)-height(root.right)) > 1) {
+        return false;
+    } else {
+        return isBalanced(root.left) && isBalanced(root.right);
+    }
+    
+
+    function height(root) {
+        if (!root) {
+            return 0;
+        }
+        
+        let left = height(root.left);
+        let right = height(root.right);
+        
+        return Math.max(left,right) + 1;
+    }  
  }
