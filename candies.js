@@ -6,7 +6,11 @@ children together. Individual pieces of candy cannot be split.
 */
 
 function candies(m, n) {
-
+    if (m%n === 0) {
+        return m/n * n
+    } else {
+        return Math.floor(m/n) * n
+    }
 }
 
 console.log(candies(10, 3)) //3
