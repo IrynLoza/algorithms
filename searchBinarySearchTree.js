@@ -18,6 +18,7 @@ subtree rooted with that node. If such a node does not exist, return null.
  * @return {TreeNode}
  */
 
+//Using recursion
 function searchBST(root, val) {
     if (root === null) {
         return null
@@ -33,4 +34,27 @@ function searchBST(root, val) {
     if (val > root.val) {
         return searchBST(root.right, val)
     }
+}
+
+//Using while loop
+function searchBST(root, val) {
+    if (root === null) {
+        return root;
+    }
+    
+    while (root !== null && root.val !== val) {
+        if (val < root.val) {
+            root = root.left;
+            //to more deeper and not stop with left subtree
+            continue;
+        }
+        
+        if (val > root.val) {
+            root = root.right;
+            continue;
+        }
+    }
+    
+    return root;
+
 }
