@@ -23,7 +23,19 @@ be 1 + 3 + 2 + 8 = 14.
 */
 
 function lateRide(n) {
-
+    let time = '';
+    if (n % 60 === 0) {
+        time = `${time}${n/60}`;
+    } else {
+        time = `${time}${(n-(n%60))/60}${n%60}`;
+    }
+  
+    let result = 0;
+    for (let i = 0; i < time.length; i++) {
+        result+= +time[i];
+    }
+    
+    return result;
 }
 
 console.log(lateRide(240)) //4
