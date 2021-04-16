@@ -9,7 +9,11 @@ level after killing the monster.
 */
 
 function reachNextLevel(experience, threshold, reward) {
-
+    if (experience+reward >= threshold) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 console.log(reachNextLevel(10, 15, 5)) //true
