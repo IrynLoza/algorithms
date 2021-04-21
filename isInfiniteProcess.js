@@ -11,8 +11,15 @@ arbitrary long numbers and execute forever.
 */
 
 function isInfiniteProcess(a, b) {
-
-}
+    if (b<a) {
+        return true;
+    };
+    if ((b-a)%2 == 0) {
+        return false;
+    } else {
+        return true;
+    };
+};
 
 console.log(isInfiniteProcess(2, 6)) //false
 console.log(isInfiniteProcess(2, 3)) //true
