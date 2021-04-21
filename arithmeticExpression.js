@@ -5,7 +5,9 @@ obtain a correct expression.
 */
 
 function arithmeticExpression(a, b, c) {
-
+    if (a+b === c || a-b === c || a/b === c || a*b === c) {
+        return true;
+    } return false;
 }
 
 console.log(arithmeticExpression(2, 3, 5)) //true
