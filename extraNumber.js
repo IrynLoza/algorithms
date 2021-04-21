@@ -5,7 +5,13 @@ of the third integer?
 */
 
 function extraNumber(a, b, c) {
-
+    if (a === c) {
+        return b;
+    } else if (b === c) {
+        return a;
+    } else if (a === b) {
+        return c;
+    };
 };
 
 console.log(extraNumber(2,7,2)); //7
