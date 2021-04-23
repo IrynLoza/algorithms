@@ -26,7 +26,51 @@ the next time you extend your card.
 */
 
 function metroCard(lastNumberOfDays) {
-
+    let result = [];
+    let months = ['Jan', 'Feb', 'Mar', 'Apr',
+    'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    let hash_map = {
+        'Jan': 31,
+        'Feb': 28,
+        'Mar': 31,
+        'Apr': 30,
+        'May': 31,
+        'June': 30,
+        'July': 31,
+        'Aug': 31,
+        'Sep': 30,
+        'Oct': 31,
+        'Nov': 30,
+        'Dec': 31,
+    };
+    
+    let givenMonths = [];
+    for (let key in hash_map) {
+        if (hash_map[key] === lastNumberOfDays) {
+            givenMonths.push(key);
+        }
+    }
+    let nextMonths = [];
+    for (let i = 0; i < givenMonths.length; i++) {
+        let index = months.indexOf(givenMonths[i]);
+        if (index === months[months.length-1]) {
+            index = 0;
+        }
+        index+= 1;
+        if (months[index] === undefined) {
+            index = 0;
+        }
+        nextMonths.push(months[index]);
+    }
+   
+    for (let i = 0; i < nextMonths.length; i++) {
+        if (!(result.includes(hash_map[nextMonths[i]]))) {
+            result.push(hash_map[nextMonths[i]]);
+        }
+        
+    }
+    
+    return result;
 }
 
 console.log(metroCard(30)) // [31] 
