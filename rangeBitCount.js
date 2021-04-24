@@ -14,7 +14,14 @@ contains 1 + 2 + 1 + 2 + 2 + 3 = 11 1s.
 */
 
 function rangeBitCount(a, b) {
-
+    let i = 0;
+    let nums = [];
+    while (i <= b) {
+        if (i >= a) {
+            nums.push(i)
+        };
+        i++;
+    }
 }
 
 console.log(rangeBitCount(2, 7)) // 11
