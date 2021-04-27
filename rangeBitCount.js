@@ -22,6 +22,21 @@ function rangeBitCount(a, b) {
         };
         i++;
     }
+    
+    let result = 0;
+    for (let i = 0; i < nums.length; i++) {
+        let num = nums[i];
+        //COnver to binary (with base 2)
+        let binary = (num).toString(2);
+        let sum = 0;
+        for (let y = 0; y < binary.length; y++) {
+            sum+= +binary[y];
+        }
+        result+= sum;
+        sum = 0;
+    }
+    
+    return result;
 }
 
 console.log(rangeBitCount(2, 7)) // 11
