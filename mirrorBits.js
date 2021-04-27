@@ -13,7 +13,23 @@ mirrorBits(a) = 1.
 */
 
 function mirrorBits(a) {
-
+    let binaryNum = a.toString(2);
+    
+    let reversed = '';
+    for (let i = binaryNum.length-1; i >= 0; i--) {
+        reversed = `${reversed}${binaryNum[i]}`
+    };
+    
+    let result = 0;
+    base = 1;
+    for (let i = reversed.length-1; i >= 0; i--) {
+        if (reversed[i] === '1') {
+            result+= base;
+        };
+        base*= 2;
+    }
+    
+    return result;
 };
 
 console.log(mirrorBits(97)) // 67
