@@ -10,7 +10,23 @@
 """
 
 def quickSort(arr):
-    pass
+    if len(arr) < 2:
+        return arr
+
+    pivot = arr[len(arr)//2]
+    left = []
+    right = []
+    center = []
+
+    for num in arr:
+        if num == pivot:
+            center.append(num)
+        elif num > pivot:
+            right.append(num)
+        elif num < pivot:
+            left.append(num) 
+
+    return  quickSort(left)+center+quickSort(right) 
 
 
 
