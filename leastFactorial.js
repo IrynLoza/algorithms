@@ -14,7 +14,29 @@ leastFactorial(n) = 24.
 */
 
 function leastFactorial(n) {
-
+    function factorial(num) {
+        let i = 1;
+        let result = 1;
+        while (i < num) {
+            result*= i+1;
+            i++;
+        };
+        return result;
+    };
+    
+    let digit = 1;
+    let fact = 1;
+    while (digit < n) {
+        let curFact = factorial(digit);
+        if (curFact < n) {
+            fact = curFact;
+        } else {
+            fact = curFact;
+            break;
+        }
+        digit++;
+    }
+    return fact; 
 }
 
 console.log(leastFactorial(17)) //24
