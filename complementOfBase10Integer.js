@@ -22,7 +22,28 @@ which is 2 in base-10.
 */
 
 function bitwiseComplement(N) {
-
+    let binary = N.toString(2);
+    let complement = '';
+    
+    for (let i = 0; i < binary.length; i++) {
+        if (binary[i] === '0') {
+            complement = `${complement}1`;
+        } else {
+            complement = `${complement}0`;
+        }
+    }
+    
+    let base = 1;
+    let result = 0;
+    
+    for (let i = complement.length-1; i > 0; i--) {
+        if (complement[i] === '1') {
+            result+= base;
+        }
+        base*= 2;
+    }
+    
+    return result;
 }
 
 console.log(bitwiseComplement(5)) //2
