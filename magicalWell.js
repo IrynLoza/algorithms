@@ -14,7 +14,14 @@ $6. Overall, you'll make $8. So, the output is 8.
 */
 
 function magicalWall(a,b,n) {
-
+    let money = 0;
+    while (n != 0) {
+        money+= a*b;
+        a++;
+        b++;
+        n--;
+    }
+    return money;
 };
 
 console.log(magicalWall(1,2,2)); //8
