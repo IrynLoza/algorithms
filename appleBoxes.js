@@ -20,7 +20,19 @@ making the answer 20 - 35 = -15.
 */
 
 function appleBoxes(k) {
-
+    let yellow = 0;
+    let red = 0;
+    
+    while (k !== 0) {
+        if (k%2 === 0) {
+            red+= k*k;
+        } else {
+            yellow+= k*k;
+        }
+        k--;
+    }
+    
+    return red-yellow;
 }
 
 console.log(appleBoxes(5)) // -15
