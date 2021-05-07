@@ -24,3 +24,9 @@ Roundness of n is 3, and there is no way to increase it.
 function increaseNumberRoundness(n) {
 
 }
+
+console.log(increaseNumberRoundness(902200100)) //true
+console.log(increaseNumberRoundness(11000)) //false
+console.log(increaseNumberRoundness(99080)) //true
+
+
