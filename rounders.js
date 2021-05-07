@@ -16,7 +16,26 @@ rounders(n) = 1000.
 */
 
 function rounders(n) {
+    let num = n.toString();
+    let converted = '';
+    let add = 0;
+    let number = 0;
+    
+    for (let i = num.length; i >= 0; i--) {
+        if (num[i] < 5 && i > 0) {
+            converted  = `0${converted}`;
+        } else if (num[i] >= 5 && i > 0) {
+            add = 1;
+            converted = `0${converted}`;
+        } else if (i === 0 && add > 0) {
+            number = +num[i] + 1;
+            converted = `${number}${converted}`
+        } else if (i === 0 && add < 1) {
+            converted = `${num[i]}${converted}`
+        } 
+    }    
 
+    return +converted;
 }
 
 console.log(rounders(15)) //20
