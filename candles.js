@@ -25,7 +25,17 @@ Thus, you can burn 5 + 2 + 1 + 1 = 9 candles, which is the answer.
 */
 
 function candles(candlesNumber, makeNew) {
+    let leftovers = candlesNumber;
+    let currentCandles = candlesNumber;
+    let result = 0;
 
+    while (currentCandles !== 0) {
+        result+= currentCandles;
+        currentCandles = Math.floor(leftovers/makeNew); //2 //1 //1
+        let rest = leftovers%makeNew; //1 //1 //0
+        leftovers = rest+currentCandles // 1+2 = 3// 2 0+1//1
+    }
+    return result;
 }
 
 console.log(candles(5, 2)) //9
