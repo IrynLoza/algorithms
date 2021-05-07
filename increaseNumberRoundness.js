@@ -22,7 +22,13 @@ Roundness of n is 3, and there is no way to increase it.
 */
 
 function increaseNumberRoundness(n) {
-
+    let num = n.toString();
+    for (let i = num.length-1; i >= 0; i--) {
+        if (num[i] === '0' && num[i-1] !== '0' && num[i+1] !== '0' && num[i+1] !== undefined && num[i-1] !== undefined) {
+            return true;
+        }
+    }
+    return false;
 }
 
 console.log(increaseNumberRoundness(902200100)) //true
