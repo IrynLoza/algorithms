@@ -4,7 +4,10 @@ l and r (inclusive).
 */
 
 function removeArrayPart(inputArray, l, r) {
-
+    let num = (r-l);
+    inputArray.splice(l, num+1);
+    
+    return inputArray;
 }
 
 console.log(removeArrayPart([2, 3, 2, 3, 4, 5], 2, 4)); // [2,3,5]
