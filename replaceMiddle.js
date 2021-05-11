@@ -23,7 +23,14 @@ replaceMiddle(arr) = [-5, -5, 10].
 */
 
 function replaceMiddle(arr) {
-
+    let middle = 0;
+        
+    if (arr.length%2 === 0) {
+        let index = arr.length/2;
+        middle = arr[index] + arr[index-1];
+        arr.splice(index-1, 2, middle);     
+    }
+    return arr;
 }
 
 console.log(replaceMiddle([7, 2, 2, 5, 10, 7])) //[7, 2, 7, 10, 7]
