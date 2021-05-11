@@ -13,7 +13,23 @@ smooth or not.
 */
 
 function isSmooth(arr) {
-
+    let middle = 0;
+    let first = arr[0];
+    let last = arr[arr.length-1];
+    
+    if (first === last) {
+        if (arr.length%2 !== 0) {
+        let index = Math.floor(arr.length/2);
+        middle = arr[index];
+    } else {
+        let index = arr.length/2;
+        middle = arr[index] + arr[index-1];
+        }
+    } else {
+        return false;
+    }
+    
+    return first === middle;
 }
 
 console.log(isSmooth([7, 2, 2, 5, 10, 7])); //true
