@@ -14,7 +14,34 @@ There are no ways to represent n = 8.
 */
 
 function isSumOfConsecutive2(n) {
-
+    let cur_digit = 1;
+    let digit = 1;
+    let sum = digit;
+    let pair = 0;
+    let i = 0;
+    
+    while (i <= n) {
+        while (digit < n) {
+            sum = sum + (cur_digit+1);
+            if (sum < n) {
+                cur_digit++
+            } 
+            if (sum === n) {
+                digit++;
+                cur_digit = digit;
+                sum = cur_digit;
+                pair++;
+            }
+            if (sum > n) {
+                digit++;
+                cur_digit = digit;
+                sum = cur_digit;
+                break;
+            }
+        }
+        i++;
+    }
+    return pair;
 }
 
 console.log(isSumOfConsecutive2(9)) //2
