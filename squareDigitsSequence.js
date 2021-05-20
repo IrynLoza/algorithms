@@ -25,7 +25,28 @@ Thus, there are 9 elements in the sequence.
 */
 
 function squareDigitsSequence(a0) {
-
+    let next = a0;
+    let count = 1;
+    let sum = 0;
+    let i = 0;
+    let totalSum = [a0];
+    
+    while (i < a0) {
+        let temp = next.toString();
+        for (let i = 0; i < temp.length; i++) {
+            sum+= ((+temp[i]) * (+temp[i]));
+        }
+        count++;
+        if (totalSum.includes(sum)) {
+            break;
+        } else {
+            totalSum.push(sum)
+            next = sum;
+            sum = 0;
+        }
+        i++;
+    }  
+    return count;
 }
 
 console.log(squareDigitsSequence(16)) //9
