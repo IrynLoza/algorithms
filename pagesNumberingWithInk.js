@@ -21,7 +21,19 @@ The following numbers will be printed: 21, 22.
 */
 
 function pagesNumberingWithInk(current, numberOfDigits) {
-
+    let pages = [];
+    
+    while (numberOfDigits >= 0) {
+        let length = current.toString().length;
+        if (numberOfDigits - length >= 0) {
+            numberOfDigits-= length;
+            pages.push(current);
+            current++;
+        } else {
+            break;
+        }
+    }
+    return pages[pages.length-1];
 }
 
 console.log(pagesNumberingWithInk(1, 5)) //5
