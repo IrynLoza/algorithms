@@ -9,7 +9,19 @@ profit, return 0.
 */
 
 function get_max_profit(prices) {
+    let profit = 0;
+    let buy = prices[0];
 
+    for (let i = 1; i < prices.length; i++) {
+       if (buy > prices[i]) {
+           buy = prices[i];
+       };
+       if (profit < prices[i] - buy) {
+           profit = prices[i] - buy;
+       };
+
+    }
+    return profit;
 }
 
 console.log(get_max_profit([10, 7, 5, 8, 11, 9])) //6
