@@ -12,7 +12,22 @@ areFollowingPatterns(strings, patterns) = false.
 */
 
 function areFollowingPatterns(strings, patterns) {
-
+    for (let i = 0; i < strings.length; i++) {
+        if (strings[i] === strings[i+1]) {
+            if (patterns[i] === patterns[i+1]) {
+                continue;
+            } else {
+                return false;
+            }
+        } else {
+            if (patterns[i] !== patterns[i+1]) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 console.log(areFollowingPatterns(["cat", "dog", "dog"], ["a", "b", "b"])) //true
