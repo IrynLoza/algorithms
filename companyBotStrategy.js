@@ -25,7 +25,16 @@ All four trainers have solved the task correctly, so the answer is (3 + 6 + 4 + 
 */
 
 function companyBotStrategy(trainingData) {
-
+    let sum = 0;
+    let count = 0;
+    for (let i = 0; i < trainingData.length; i++) {
+        if (trainingData[i][1] === 1) {
+            sum+= trainingData[i][0]
+            count++;
+        }
+    }
+    
+    return sum > 0 ? sum/count : count;
 }
 
 console.log(companyBotStrategy([[3,1], [6,1], [4,1], [5,1]])); //4.5
