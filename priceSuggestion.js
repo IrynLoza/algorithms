@@ -30,7 +30,41 @@ priceSuggestion(contractData) = [].
 */
 
 function priceSuggestion(contractData) {
-
+    let result = [];
+    if (contractData.length <= 1) {
+        return result;
+    } else if (contractData.length === 2) {
+        return contractData;
+    }
+    contractData.sort((a,b) => {
+        if (a < b ) return -1;
+        if (a > b) return 1;
+        return 0;
+    });
+   
+    let a = [];
+    let b = [];
+    
+    for (let i = 0; i < contractData.length; i++) {
+        if (i < contractData.length/2) {
+            a.push(contractData[i]);
+        } else {
+            b.push(contractData[i]);
+        }
+    }
+    
+    if (a.length%2 !== 0) {
+        result.push(a[Math.floor(a.length/2)]);
+        result.push(b[Math.floor(b.length/2)]);
+    } else {
+        let startIndex = a.length/2-1;
+        let lastIndex = b.length/2;
+        let tempA = Math.floor((a[startIndex] + a[lastIndex]) / 2);
+        let tempB = Math.round((b[startIndex] + b[lastIndex]) / 2);
+        result.push(tempA);
+        result.push(tempB);
+    }
+    return result;  
 }
 
 console.log(priceSuggestion([10, 15, 14, 7, 11, 15])); //[10,15]
