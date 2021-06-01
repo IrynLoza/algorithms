@@ -35,7 +35,21 @@ boxBlur(image) = [[5, 4],
 */
 
 function boxBlur(image) {
-
+    let result = [];
+    for (let row = 0; row < image.length - 2; row++) {
+        let line = [];
+        for (let col = 0; col < image.length - 2; col++) {
+            let sum = 0;
+            for (let y = row; y < row+3; y++) {
+                for (let x = col; x < col+3; x++) {
+                    sum+= image[y][x];
+                }
+            }
+            line.push(Math.floor(sum/9))
+        }
+        result.push(line)
+    }
+    return result;
 }
 
 console.log(boxBlur([[7, 4, 0, 1], 
