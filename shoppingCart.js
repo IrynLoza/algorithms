@@ -30,7 +30,44 @@ shoppingCart(requests) = ["pickles : 5", "milk : 1"];
 */
 
 function shoppingCart(requests) {
-
+    let cart = [];
+    let hashMap = {};
+    for (let i = 0; i < requests.length; i++) {
+        let temp = requests[i].split(' : ');
+        let index = 0;
+        if (temp.includes('add')) {
+             if (!(temp[1] in hashMap)) {
+                hashMap[temp[1]] = 1;
+            } else {
+                hashMap[temp[1]]+= 1;
+            }
+            if (!(cart.includes(temp[1]))) {
+                cart.push(`${temp[1]} : ${hashMap[temp[1]]}`)
+                index = cart.includes(temp[1])
+            } else {
+                cart[index] = `${temp[1]} : ${hashMap[temp[1]]}`
+            }
+        } 
+        if (temp.includes('remove')) {
+            hashMap[temp[1]]-= 1;
+            if (hashMap[temp[1]] <= 0) {
+                cart.splice(index, 1)
+            } else {
+                cart[index] = `${temp[1]} : ${hashMap[temp[1]]}`
+            }
+        } 
+        if (temp.includes('quantity_upd')) {
+            let quantity = +temp[2];
+            hashMap[temp[1]]+= quantity;
+            cart[index] = `${temp[1]} : ${hashMap[temp[1]]}` 
+        } 
+        if (temp.includes('checkout')) {
+            cart = [];
+            hashMap = {};
+        } 
+        
+    }
+    return cart
 }
 
 console.log(shoppingCart(["add : milk",
