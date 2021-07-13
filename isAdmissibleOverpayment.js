@@ -29,7 +29,23 @@ which they are willing to do based on their price sensitivity.
 */
 
 function isAdmissibleOverpayment(prices, notes, x)  {
-
+    let percents = [];
+    for (let i = 0; i < notes.length; i++) {
+        let splited = notes[i].split('%');
+        percents.push(+splited[0]);
+    }
+    
+    let count = [];
+    for (let i = 0; i < prices.length; i++) {
+        let diff = ((prices[i] * 100) / 100 + percents[i]) - prices[i];
+        if (!(isNaN(diff))) {
+            count.push(diff);
+        };
+    };
+    
+    let result = count.reduce((a,b) => a-b);
+    
+    return result <= x ? true : false;
 };
 
 console.log(isAdmissibleOverpayment([110, 95, 70], 
