@@ -32,19 +32,19 @@ function isAdmissibleOverpayment(prices, notes, x)  {
 
 };
 
-console.log([110, 95, 70], 
+console.log(isAdmissibleOverpayment([110, 95, 70], 
             ["10.0% higher than in-store", 
             "5.0% lower than in-store", 
             "Same as in-store"],
-            5) //true
-console.log([48, 165], 
+            5)) //true
+console.log(isAdmissibleOverpayment([48, 165], 
             ["20.00% lower than in-store", 
             "10.00% higher than in-store"],
-            3) //false
-console.log([40, 40, 40, 40], 
+            3)) //false
+console.log(isAdmissibleOverpayment([40, 40, 40, 40], 
             ["0.001% higher than in-store", 
             "0.0% lower than in-store", 
             "0.0% higher than in-store", 
             "0.0% lower than in-store"],
-            0) //false            
+            0)) //false            
 
