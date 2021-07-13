@@ -13,7 +13,17 @@ characterParity(symbol) = "not a digit".
 */
 
 function characterParity(symbol) {
-
+    const odd = 'odd';
+    const even = 'even';
+    const notADigit = 'not a digit';
+    
+    if (isNaN(+symbol)) {
+        return notADigit;
+    } else if (+symbol%2 !== 0) {
+        return odd;
+    } else if (+symbol%2 === 0) {
+        return even;
+    } 
 };
 
 console.log(characterParity('8')) //even
