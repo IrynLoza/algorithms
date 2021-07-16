@@ -5,7 +5,12 @@ the labels is missing. Your task is to find it.
 */
 
 function missingNumber(arr) {
+    let sum = arr.length;
+    for (let i = 0; i < arr.length; i++) {
+        sum += i - arr[i];
+    };
 
+    return sum;
 };
 
 console.log(missingNumber([3,1,0])) //2
